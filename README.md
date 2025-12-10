@@ -1,2 +1,0 @@
-# Mototags-website
-MotoTags Website
