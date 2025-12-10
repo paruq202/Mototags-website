@@ -1,0 +1,95 @@
+:root {
+    --bg-light: #f5f5f5;
+    --bg-dark: #121212;
+    --text-light: #222;
+    --text-dark: #eee;
+    --primary: #e53935;
+    --card-bg-light: #fff;
+    --card-bg-dark: #1f1f1f;
+    --shadow: rgba(0,0,0,0.2);
+}
+
+body {
+    margin:0;
+    font-family: Arial,sans-serif;
+    background: var(--bg-light);
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+/* NAVBAR */
+.navbar {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#333;
+    color:#fff;
+    padding:10px 20px;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+}
+.menu-icon {cursor:pointer; font-size:28px;}
+.menu {
+    position:fixed;
+    top:0; right:-250px;
+    width:250px; height:100vh;
+    background:#444;
+    padding-top:70px;
+    transition:0.3s;
+}
+.menu a {
+    display:block; color:#fff; text-decoration:none; padding:15px; font-size:18px;
+}
+.menu a:hover {background:#666;}
+
+/* SEITEN */
+.page {display:none; padding:90px 20px 30px; opacity:0; transition:0.5s;}
+.page.active {display:block; opacity:1;}
+
+/* PRODUKTE */
+.category {display:flex; flex-wrap:wrap; gap:20px;}
+.product {
+    background: var(--card-bg-light);
+    width:220px; border-radius:12px;
+    box-shadow:0 4px 12px var(--shadow);
+    overflow:hidden; position:relative;
+    transform: translateY(20px); opacity:0;
+    transition:0.3s;
+}
+.product.show {transform:translateY(0); opacity:1;}
+.product img {width:100%; display:block;}
+.sale-tag {
+    position:absolute; top:10px; left:-30px;
+    background:var(--primary); color:white;
+    padding:5px 40px; font-weight:bold;
+    transform:rotate(-45deg);
+    font-size:14px;
+}
+.info {padding:15px;}
+.price-old {text-decoration:line-through;color:#777;}
+.price-new {color:var(--primary); font-weight:bold; font-size:18px;}
+.stock {font-size:14px; margin-top:5px;}
+
+/* PARTNER */
+.partner-card {
+    background: var(--card-bg-light); max-width:400px;
+    padding:20px; border-radius:12px;
+    box-shadow:0 4px 12px var(--shadow);
+    margin-bottom:30px;
+}
+.partner-card img {width:100%; border-radius:10px;}
+.social-links a {margin-right:10px; font-weight:bold; text-decoration:none; color:inherit;}
+
+/* DARK MODE */
+body.dark {background:var(--bg-dark); color:var(--text-dark);}
+body.dark .product, body.dark .partner-card {background:var(--card-bg-dark);}
+body.dark .menu {background:#222;}
+body.dark .menu a:hover {background:#555;}
+
+/* BUTTONS */
+button {padding:8px 12px; margin:5px; border:none; border-radius:5px; cursor:pointer;}
+.add-btn {background:var(--primary); color:white;}
+.delete-btn {background:#777; color:white;}
+.edit-btn {background:#2196F3; color:white;}
