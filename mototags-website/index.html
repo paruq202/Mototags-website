@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MotoTags</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>MotoTags</h2>
+    <div>
+        <span class="menu-icon" onclick="toggleMenu()">☰</span>
+        <button onclick="toggleDark()">🌓</button>
+    </div>
+</div>
+
+<!-- SLIDE MENU -->
+<div class="menu" id="menu">
+    <a href="#" onclick="openPage('start')">Start</a>
+    <a href="#" onclick="openPage('produkte')">Produkte</a>
+    <a href="#" onclick="openPage('partner')">Kooperationspartner</a>
+    <a href="#" onclick="openPage('admin')">Admin Panel</a>
+</div>
+
+<!-- STARTSEITE -->
+<div class="page active" id="start">
+    <h1>MotoTags</h1>
+    <button onclick="openPage('produkte')" class="add-btn">Zu den Produkten</button>
+    <p>
+        <img src="icons/mail.png" alt="Mail Icon" style="width:20px;vertical-align:middle;"> 
+        <a href="mailto:deine@mail.de">deine@mail.de</a>
+    </p>
+</div>
+
+<!-- PRODUKTE -->
+<div class="page" id="produkte">
+    <h1>Produkte</h1>
+    <div class="category" id="produkt-container"></div>
+</div>
+
+<!-- KOOPERATIONSPARTNER -->
+<div class="page" id="partner">
+    <h1>Kooperationspartner</h1>
+    <div id="partner-container"></div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div class="page" id="admin">
+    <h1>Admin Panel</h1>
+    <h2>Produkte verwalten</h2>
+    <form id="produkt-form">
+        <input type="text" id="p-name" placeholder="Produktname" required>
+        <input type="number" id="p-price-old" placeholder="Alter Preis">
+        <input type="number" id="p-price-new" placeholder="Neuer Preis" required>
+        <input type="number" id="p-stock" placeholder="Stock" required>
+        <input type="text" id="p-img" placeholder="Bild URL" required>
+        <label><input type="checkbox" id="p-sale"> Sale</label>
+        <button type="submit" class="add-btn">Hinzufügen</button>
+    </form>
+
+    <h2>Kooperationspartner verwalten</h2>
+    <form id="partner-form">
+        <input type="text" id="pa-name" placeholder="Partnername" required>
+        <input type="text" id="pa-img" placeholder="Bild URL" required>
+        <input type="text" id="pa-comment" placeholder="Kommentar">
+        <input type="text" id="pa-since" placeholder="Kooperation seit">
+        <input type="text" id="pa-yt" placeholder="YouTube Link">
+        <input type="text" id="pa-tiktok" placeholder="TikTok Link">
+        <input type="text" id="pa-insta" placeholder="Instagram Link">
+        <button type="submit" class="add-btn">Hinzufügen</button>
+    </form>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
